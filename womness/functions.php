@@ -1,4 +1,14 @@
 <?php
+
+/**
+Licensing and Updates
+**/
+
+require 'theme_update_check.php';
+$MyUpdateChecker = new ThemeUpdateChecker(
+    'womness',
+    'https://kernl.us/api/v1/theme-updates/5a615b8ad3a06a26c3e3d01e/'
+
 /**
  * Theme settings
  */
