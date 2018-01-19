@@ -1,0 +1,33 @@
+body {
+	background-color: #F0E4A8;
+}
+
+#navbar,
+#cssmenu {
+	background: #876240;
+}
+
+#cssmenu > ul > li > a {
+	color: #fbfbfb;
+}
+
+#cssmenu > ul > li:hover > a {
+  color: #fff;
+  background:#77996E;
+}
+
+.watch-btn, .membership-submit, .subscribe-submit {
+	background: #E6683E!important;
+}
+
+#sub-nav {
+	background: #DEAE66;
+}
+
+#FooterWrap {
+	background: #876240;
+}
+
+.darkpink {
+	color: #E6683E!important;
+}
