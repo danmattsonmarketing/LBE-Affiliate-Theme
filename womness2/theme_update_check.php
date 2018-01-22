@@ -20,7 +20,7 @@ if ( !class_exists('ThemeUpdateChecker') ):
  */
 class ThemeUpdateChecker {
 	public $theme = '';              //The theme associated with this update checker instance.
-	public $metadataUrl = 'http://learnbuildearn.com';        //The URL of the theme's metadata file.
+	public $metadataUrl = '';        //The URL of the theme's metadata file.
 	public $enableAutomaticChecking = true; //Enable/disable automatic update checks.
 
 	// Kernl Custom
