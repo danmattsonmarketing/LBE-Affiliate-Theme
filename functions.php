@@ -16,7 +16,7 @@ add_theme_support( 'post-thumbnails' );
 
 
 add_filter( 'wp_title', 'womness_hack_wp_title_for_home' );
- 
+
 /**
  * Customize the title for the home page, if one is not set.
  *
@@ -49,7 +49,7 @@ class womness_general_settings {
         add_settings_field('womness_color_scheme', '<label for="womness_color_scheme">'.__('Color Scheme' , 'womness_color_scheme' ).'</label>' , array(&$this, 'fields_colorscheme_html') , 'general' );
         add_settings_field('womness_pagination_home', '<label for="womness_pagination_home">'.__('Show pagination in front page' , 'womness_pagination_home' ).'</label>' , array(&$this, 'fields_pagination_home_html') , 'general' );
         add_settings_field('womness_disclaimer', '<label for="womness_disclaimer">'.__('Disclaimer' , 'womness_disclaimer' ).'</label>' , array(&$this, 'fields_disclaimer_html') , 'general' );
-        add_settings_field('womness_copyright', '<label for="womness_copyright">'.__('Copyright text' , 'womness_copyright' ).'</label>' , array(&$this, 'fields_copyright_html') , 'general' );        
+        add_settings_field('womness_copyright', '<label for="womness_copyright">'.__('Copyright text' , 'womness_copyright' ).'</label>' , array(&$this, 'fields_copyright_html') , 'general' );
     }
     function fields_logo_html() {
         $value = get_option( 'womness_logo', '' );
@@ -113,7 +113,7 @@ class womness_general_settings {
 }
 $new_general_setting = new womness_general_settings();
 
-/** 
+/**
  * Styles and scripts
  */
 function womness_scripts() {
@@ -133,12 +133,12 @@ add_action( 'wp_enqueue_scripts', 'womness_scripts' );
 
 
 /**
- * Menues 
+ * Menues
  */
 register_nav_menus( array(
 	'womness_top_menu' => 'Top Navigation Menu',
 	'womness_main_menu' => 'Main Navigation Menu',
-    'womness_footer_menu' => 'Footer Navigation Menu',
+  'womness_footer_menu' => 'Footer Navigation Menu',
 ) );
 
 
@@ -153,7 +153,7 @@ register_sidebar( array(
     'before_widget' => '<li id="%1$s" class="widget %2$s">',
     'after_widget'  => '</li>',
     'before_title'  => '<h2 class="widgettitle">',
-    'after_title'   => '</h2>' 
+    'after_title'   => '</h2>'
 ));
 
 register_sidebar( array(
@@ -164,7 +164,7 @@ register_sidebar( array(
     'before_widget' => '<li id="%1$s" class="widget %2$s">',
     'after_widget'  => '</li>',
     'before_title'  => '<h2 class="widgettitle">',
-    'after_title'   => '</h2>' 
+    'after_title'   => '</h2>'
 ));
 
 register_sidebar( array(
@@ -175,7 +175,7 @@ register_sidebar( array(
 	'before_widget' => '<li id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</li>',
 	'before_title'  => '<h2 class="widgettitle">',
-	'after_title'   => '</h2>' 
+	'after_title'   => '</h2>'
 ));
 
 register_sidebar( array(
@@ -186,7 +186,7 @@ register_sidebar( array(
 	'before_widget' => '<li id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</li>',
 	'before_title'  => '<h2 class="widgettitle">',
-	'after_title'   => '</h2>' 
+	'after_title'   => '</h2>'
 ));
 
 
@@ -214,18 +214,18 @@ class Womness_AWeberWidget extends WP_Widget {
             <h2><?php echo $title; ?></h2>
             <p><?php echo $subtitle; ?></p>
           </div>
-          <div class="flt-left "> 
+          <div class="flt-left ">
             <?php
             if ($image) { ?>
                 <img src="<?php echo $image; ?>" alt="" width="300" height="402" class="imgresponsive">
-                <?php 
+                <?php
             }
             ?>
           </div>
 
           <div class="flt-right margin-10top">
             <p>
-                <?php 
+                <?php
                 if ($text) {
                     echo $text;
                 }
@@ -282,35 +282,35 @@ class Womness_AWeberWidget extends WP_Widget {
 
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'subtitle' ); ?>"><?php _e( 'Subtitle:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'subtitle' ); ?>"><?php _e( 'Subtitle:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'subtitle' ); ?>" name="<?php echo $this->get_field_name( 'subtitle' ); ?>" type="text" value="<?php echo esc_attr( $subtitle ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Image URL:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Image URL:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'image' ); ?>" name="<?php echo $this->get_field_name( 'image' ); ?>" type="text" value="<?php echo esc_attr( $image ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Text:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Text:' ); ?></label>
             <textarea rows="10" class="widefat" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_attr( $text ); ?></textarea>
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'btn' ); ?>"><?php _e( 'Submit button text:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'btn' ); ?>"><?php _e( 'Submit button text:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'btn' ); ?>" name="<?php echo $this->get_field_name( 'btn' ); ?>" type="text" value="<?php echo esc_attr( $btn ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'list' ); ?>"><?php _e( 'List ID:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'list' ); ?>"><?php _e( 'List ID:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'list' ); ?>" name="<?php echo $this->get_field_name( 'list' ); ?>" type="text" value="<?php echo esc_attr( $list ); ?>" />
         </p>
-        <?php 
+        <?php
     }
 }
 
@@ -335,7 +335,7 @@ class Womness_AWeberWidget_2 extends WP_Widget {
           <div class="signup-forms">
             <div class="signup-content">
                 <h2><?php echo $title; ?></h2>
-                <?php 
+                <?php
                 if ($text) {
                     echo $text;
                 }
@@ -393,30 +393,30 @@ class Womness_AWeberWidget_2 extends WP_Widget {
 
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Image URL:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Image URL:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'image' ); ?>" name="<?php echo $this->get_field_name( 'image' ); ?>" type="text" value="<?php echo esc_attr( $image ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Text:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Text:' ); ?></label>
             <textarea rows="10" class="widefat" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_attr( $text ); ?></textarea>
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'btn' ); ?>"><?php _e( 'Submit button text:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'btn' ); ?>"><?php _e( 'Submit button text:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'btn' ); ?>" name="<?php echo $this->get_field_name( 'btn' ); ?>" type="text" value="<?php echo esc_attr( $btn ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'list' ); ?>"><?php _e( 'List ID:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'list' ); ?>"><?php _e( 'List ID:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'list' ); ?>" name="<?php echo $this->get_field_name( 'list' ); ?>" type="text" value="<?php echo esc_attr( $list ); ?>" />
         </p>
-        <?php 
+        <?php
     }
 }
 
@@ -478,30 +478,30 @@ class Womness_VideoWidget extends WP_Widget {
 
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Image URL:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Image URL:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'image' ); ?>" name="<?php echo $this->get_field_name( 'image' ); ?>" type="text" value="<?php echo esc_attr( $image ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Text:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Text:' ); ?></label>
             <textarea rows="10" class="widefat" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_attr( $text ); ?></textarea>
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'btn' ); ?>"><?php _e( 'Button text:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'btn' ); ?>"><?php _e( 'Button text:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'btn' ); ?>" name="<?php echo $this->get_field_name( 'btn' ); ?>" type="text" value="<?php echo esc_attr( $btn ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'link' ); ?>"><?php _e( 'Button link:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'link' ); ?>"><?php _e( 'Button link:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'link' ); ?>" name="<?php echo $this->get_field_name( 'link' ); ?>" type="text" value="<?php echo esc_attr( $link ); ?>" />
         </p>
-        <?php 
+        <?php
     }
 }
 
@@ -527,18 +527,18 @@ class Womness_FlutterMailWidget extends WP_Widget {
             <h2><?php echo $title; ?></h2>
             <p><?php echo $subtitle; ?></p>
           </div>
-          <div class="flt-left "> 
+          <div class="flt-left ">
             <?php
             if ($image) { ?>
                 <img src="<?php echo $image; ?>" alt="" width="300" height="402" class="imgresponsive">
-                <?php 
+                <?php
             }
             ?>
           </div>
 
           <div class="flt-right margin-10top">
             <p>
-                <?php 
+                <?php
                 if ($text) {
                     echo $text;
                 }
@@ -637,40 +637,40 @@ class Womness_FlutterMailWidget extends WP_Widget {
 
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'subtitle' ); ?>"><?php _e( 'Subtitle:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'subtitle' ); ?>"><?php _e( 'Subtitle:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'subtitle' ); ?>" name="<?php echo $this->get_field_name( 'subtitle' ); ?>" type="text" value="<?php echo esc_attr( $subtitle ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Image URL:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Image URL:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'image' ); ?>" name="<?php echo $this->get_field_name( 'image' ); ?>" type="text" value="<?php echo esc_attr( $image ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Text:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Text:' ); ?></label>
             <textarea rows="10" class="widefat" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_attr( $text ); ?></textarea>
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'btn' ); ?>"><?php _e( 'Submit button text:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'btn' ); ?>"><?php _e( 'Submit button text:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'btn' ); ?>" name="<?php echo $this->get_field_name( 'btn' ); ?>" type="text" value="<?php echo esc_attr( $btn ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'list' ); ?>"><?php _e( 'List ID:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'list' ); ?>"><?php _e( 'List ID:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'list' ); ?>" name="<?php echo $this->get_field_name( 'list' ); ?>" type="text" value="<?php echo esc_attr( $list ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'apikey' ); ?>"><?php _e( 'API Key:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'apikey' ); ?>"><?php _e( 'API Key:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'apikey' ); ?>" name="<?php echo $this->get_field_name( 'apikey' ); ?>" type="text" value="<?php echo esc_attr( $apikey ); ?>" />
         </p>
-        <?php 
+        <?php
     }
 }
 
@@ -682,4 +682,3 @@ function womness_register_widgets() {
 }
 
 add_action( 'widgets_init', 'womness_register_widgets' );
-
